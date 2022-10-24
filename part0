@@ -1,0 +1,58 @@
+//0.4 new note question
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: new_note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: notes
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{content: 'new note', date: '2022-10-24T14:07:28.894Z'}, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+
+
+//0.5 single page app
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: spa
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{"content":"new note","date":"2022-10-24T14:07:28.894Z"},, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+
+
+//0.6 New note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: new_note_spa
+
+
+
+
